@@ -1,4 +1,6 @@
 // ─── components/chat/MessageBubble.jsx ───────────────────────────────────────
+import { Link, useParams } from 'react-router-dom';
+import { timeAgo, getInitials } from '../../utils/helpers';
 import React from 'react';
 import { format } from 'date-fns';
 
@@ -53,8 +55,6 @@ export function TypingIndicator({ name }) {
 }
 
 // ─── components/chat/ChatSidebar.jsx ─────────────────────────────────────────
-import { Link, useParams } from 'react-router-dom';
-import { timeAgo, getInitials } from '../../utils/helpers';
 
 export function ChatSidebar({ conversations, isLoading }) {
   const { conversationId } = useParams();
