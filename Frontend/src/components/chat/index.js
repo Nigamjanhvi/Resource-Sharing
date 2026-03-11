@@ -1,8 +1,8 @@
-// ─── components/chat/MessageBubble.jsx ───────────────────────────────────────
-import { Link, useParams } from 'react-router-dom';
-import { timeAgo, getInitials } from '../../utils/helpers';
 import React from 'react';
+import { Link, useParams } from 'react-router-dom';
 import { format } from 'date-fns';
+import Spinner from '../common/Spinner';
+import { timeAgo, getInitials } from '../../utils/helpers';
 
 export function MessageBubble({ message, isOwn }) {
   return (
@@ -58,7 +58,6 @@ export function TypingIndicator({ name }) {
 
 export function ChatSidebar({ conversations, isLoading }) {
   const { conversationId } = useParams();
-  const Spinner = require('../common/Spinner').default;
 
   if (isLoading) return (
     <div style={{ display: 'flex', justifyContent: 'center', padding: 40 }}>
